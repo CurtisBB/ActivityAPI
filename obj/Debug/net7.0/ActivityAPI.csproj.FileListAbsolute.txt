@@ -31,3 +31,7 @@ C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityA
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\obj\Debug\net7.0\ActivityAPI.pdb
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\obj\Debug\net7.0\ActivityAPI.genruntimeconfig.cache
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\obj\Debug\net7.0\ref\ActivityAPI.dll
+C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

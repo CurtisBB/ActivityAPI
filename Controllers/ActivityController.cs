@@ -65,6 +65,15 @@ public class ActivitiesController : ControllerBase
         return Ok(activity);
     }
 
+    [HttpGet("activities")]
+    public IActionResult GetActivities()
+    {
+        var activities = LoadActivitiesFromXmlFiles(directoryPath);
+
+        return Ok(activities);
+    }
+
+
     [HttpPut("{activityId}")]
     public IActionResult UpdateActivity(Guid activityId, [FromBody] Activity updatedActivity)
     {   
@@ -100,8 +109,7 @@ public class ActivitiesController : ControllerBase
         
         return Ok(updatedActivity);
     }
-    
-  
+
 
     [HttpGet("activity-type-summary")]
     public IActionResult GetActivityTypeSummary(DateTime startDate, DateTime endDate)
