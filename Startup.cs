@@ -12,7 +12,6 @@ namespace ActivityAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            // Add any additional services you might need here
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
