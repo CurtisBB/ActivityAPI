@@ -35,3 +35,40 @@ C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityA
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\curti\OneDrive - HomeBuns\Documents\2023.Projects\C#\Activity\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\appsettings.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\ActivityAPI.exe
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\ActivityAPI.deps.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\ActivityAPI.runtimeconfig.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\ActivityAPI.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\ActivityAPI.pdb
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.csproj.AssemblyReference.cache
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.AssemblyInfoInputs.cache
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.AssemblyInfo.cs
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.csproj.CoreCompileInputs.cache
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets\msbuild.ActivityAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets\msbuild.build.ActivityAPI.props
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.ActivityAPI.props
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.ActivityAPI.props
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\scopedcss\bundle\ActivityAPI.styles.css
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.csproj.CopyComplete
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\refint\ActivityAPI.dll
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.pdb
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ActivityAPI.genruntimeconfig.cache
+C:\Users\Curtis\.Projects\ActivityAPI\ActivityAPI\obj\Debug\net7.0\ref\ActivityAPI.dll

@@ -1,13 +1,39 @@
 using System.Xml.Serialization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 [Route("api/[controller]")]
 [ApiController]
 public class ActivitiesController : ControllerBase
 {
     // Path to the directory 
-    private string directoryPath = "C:\\Users\\curti\\ActivitiesData";
+    //private string directoryPath = "C:\\Users\\curti\\ActivitiesData";
+    public string directoryPath = "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\Data";
 
+    
+
+    /* private Activity WriteActivitiesToXML(activityJson)
+    {
+         // Serialize the activity object to XML
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Activity));
+
+        // Ensure the directory exists
+        Directory.CreateDirectory(directoryPath);
+
+        // Create a unique file name based on the current timestamp
+        Guid guid = Guid.NewGuid();
+        string fileName = guid.ToString() + ".xml";
+        string filePath = Path.Combine(directoryPath, fileName);
+
+        // Serialize the activity and write it to the XML file
+        using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
+        {
+            xmlSerializer.Serialize(fileStream, activityJson);
+        }
+
+        return(activityJson);
+    }
+ */
     private List<Activity> LoadActivitiesFromXmlFiles(string directoryPath)
     {
         List<Activity> activities = new List<Activity>();
@@ -41,28 +67,14 @@ public class ActivitiesController : ControllerBase
             return BadRequest(ModelState);
         }
 
-
         // Calculate the elapsed time from DateTimeStarted and DateTimeFinished
         activity.ElapsedTime = activity.DateTimeFinished - activity.DateTimeStarted;
 
-        // Serialize the activity object to XML
-        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Activity));
+        string activityJson = JsonConvert.SerializeObject(activity, Formatting.Indented);
 
-        // Ensure the directory exists
-        Directory.CreateDirectory(directoryPath);
+        //WriteActivitiesToXML(activityJson);
 
-        // Create a unique file name based on the current timestamp
-        Guid guid = Guid.NewGuid();
-        string fileName = guid.ToString() + ".xml";
-        string filePath = Path.Combine(directoryPath, fileName);
-
-        // Serialize the activity and write it to the XML file
-        using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
-        {
-            xmlSerializer.Serialize(fileStream, activity);
-        }
-
-        return Ok(activity);
+        return Ok(activityJson);
     }
 
     [HttpGet("activities")]
