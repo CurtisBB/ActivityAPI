@@ -12,9 +12,7 @@ public class Activity
     public DateTime DateTimeStarted { get; set; }
     public DateTime DateTimeFinished { get; set; }
     public TimeSpan ElapsedTime { get; set; }
-    
-    
-    public List<Attachment>? Attachments { get; set; }
+    public List<Attachment>? Attachments { get; set; }    
 }
 
 public class Attachment 
