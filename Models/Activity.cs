@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 public class Activity
 {
@@ -12,7 +13,9 @@ public class Activity
     public DateTime DateTimeStarted { get; set; }
     public DateTime DateTimeFinished { get; set; }
     public TimeSpan ElapsedTime { get; set; }
-    public List<Attachment>? Attachments { get; set; }    
+    
+    [JsonIgnore]
+    public List<Attachment>? Attachments { get; set; }
 }
 
 public class Attachment 
