@@ -1,64 +1,37 @@
-using System.Xml.Serialization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 [Route("api/[controller]")]
 [ApiController]
 public class ActivitiesController : ControllerBase
 {
     // Path to the directory 
-    //private string directoryPath = "C:\\Users\\curti\\ActivitiesData";
-    public string directoryPath = "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\Data";
+    public string directoryPath = "C:\\Users\\curti\\ActivitiesData";
+    //public string directoryPath = "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\Data";
 
-    
+    private JArray LoadActivitiesFromFiles()
+    {   
+        JArray listActivities = new JArray();
 
-    /* private Activity WriteActivitiesToXML(activityJson)
-    {
-         // Serialize the activity object to XML
-        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Activity));
-
-        // Ensure the directory exists
-        Directory.CreateDirectory(directoryPath);
-
-        // Create a unique file name based on the current timestamp
-        Guid guid = Guid.NewGuid();
-        string fileName = guid.ToString() + ".xml";
-        string filePath = Path.Combine(directoryPath, fileName);
-
-        // Serialize the activity and write it to the XML file
-        using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
-        {
-            xmlSerializer.Serialize(fileStream, activityJson);
-        }
-
-        return(activityJson);
-    }
- */
-    private List<Activity> LoadActivitiesFromXmlFiles(string directoryPath)
-    {
-        List<Activity> activities = new List<Activity>();
-    
         if (Directory.Exists(directoryPath))
         {
-            var xmlFileNames = Directory.GetFiles(directoryPath, "*.xml");
+            var fileNames =  Directory.GetFiles(directoryPath, "*.txt");
 
-            var serializer = new XmlSerializer(typeof(Activity));
-
-            foreach (var xmlFileName in xmlFileNames)
+            foreach (var txtFile in fileNames)
             {
-                using (var reader = new StreamReader(xmlFileName))
-                {
-                    var activity = (Activity)serializer.Deserialize(reader);
-                    activities.Add(activity);
-                }
-            }
-        }
-
-        return activities;
+                var json = System.IO.File.ReadAllText(txtFile);
+                Activity activity = JsonConvert.DeserializeObject<Activity>(json);     
+                JObject activityObject = JObject.FromObject(activity);
+                listActivities.Add(activityObject);       
+            }        
+        }         
+        
+        return listActivities;       
     }
 
-
-    [HttpPost]
+    [HttpPost("save-activities")]
     public IActionResult SaveActivity(Activity activity)
     {
         // Check activity type is valid
@@ -67,22 +40,28 @@ public class ActivitiesController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        // Calculate the elapsed time from DateTimeStarted and DateTimeFinished
         activity.ElapsedTime = activity.DateTimeFinished - activity.DateTimeStarted;
 
         string activityJson = JsonConvert.SerializeObject(activity, Formatting.Indented);
 
-        //WriteActivitiesToXML(activityJson);
+        // Create a unique file name 
+        Guid guid = Guid.NewGuid();
+        string fileName = guid.ToString() + ".txt";
+        string filePath = Path.Combine(directoryPath, fileName);
+
+        System.IO.File.WriteAllText(filePath, activityJson);
 
         return Ok(activityJson);
     }
 
-    [HttpGet("activities")]
+    [HttpGet("get-activities")]
     public IActionResult GetActivities()
     {
-        var activities = LoadActivitiesFromXmlFiles(directoryPath);
+        var activities = LoadActivitiesFromFiles();
 
-        return Ok(activities);
+        string printActivities = JsonConvert.SerializeObject(activities, Formatting.Indented);
+
+        return Ok(printActivities);
     }
 
 
@@ -90,21 +69,16 @@ public class ActivitiesController : ControllerBase
     public IActionResult UpdateActivity(Guid activityId, [FromBody] Activity updatedActivity)
     {   
         
-
-        var activityFilePath = Path.Combine(directoryPath, $"{activityId}.xml");
+        var activityFilePath = Path.Combine(directoryPath, $"{activityId}.txt");
 
         if (!System.IO.File.Exists(activityFilePath))
         {
             return NotFound("Activity not found.");
         }
 
-        XmlSerializer serializer = new XmlSerializer(typeof(Activity));
-        Activity existingActivity;
-
-        using(var reader = new StreamReader(activityFilePath))
-        {
-            existingActivity = (Activity)serializer.Deserialize(reader);
-        }
+        // Read the existing activity JSON from the file
+        string existingActivityJson = System.IO.File.ReadAllText(activityFilePath);
+        Activity existingActivity = JsonConvert.DeserializeObject<Activity>(existingActivityJson);
 
         // Apply updates to existingActivity based on updatedActivity
         existingActivity.Name = updatedActivity.Name;
@@ -113,34 +87,34 @@ public class ActivitiesController : ControllerBase
 
         // Update elapsed time
         updatedActivity.ElapsedTime = updatedActivity.DateTimeFinished - updatedActivity.DateTimeStarted;
-
-        using(var writer = new StreamWriter(activityFilePath))
-        {
-            serializer.Serialize(writer, updatedActivity);
-        }
         
-        return Ok(updatedActivity);
-    }
+        string updatedActivityJson = JsonConvert.SerializeObject(updatedActivity, Formatting.Indented);
+
+        // Write the updated JSON back to the file
+        System.IO.File.WriteAllText(activityFilePath, updatedActivityJson);
+
+        return Ok(updatedActivityJson);
+    } 
 
 
     [HttpGet("activity-type-summary")]
     public IActionResult GetActivityTypeSummary(DateTime startDate, DateTime endDate)
     {
-        var activities = LoadActivitiesFromXmlFiles(directoryPath); 
-    
-        var summary = activities
-            .Where(a => a.DateTimeStarted >= startDate && a.DateTimeFinished <= endDate)
-            .GroupBy(a => a.Type)
+        var activities = LoadActivitiesFromFiles(); 
+
+        var groupedActivities = activities
+            .Where(a => (DateTime)a["DateTimeStarted"] >= startDate && (DateTime)a["DateTimeFinished"] <= endDate)
+            .GroupBy(a => a["Type".ToString()])
             .Select(group => new ActivitySummary
             {
-                Type = group.Key,
-                TotalElapsedTime = TimeSpan.FromTicks(group.Sum(a => a.ElapsedTime.Ticks)),
-                Activities = group.ToList()
+                Type = (string)group.Key,
+                TotalElapsedTime = TimeSpan.FromTicks(group.Sum(a => ((TimeSpan)a["ElapsedTime"]).Ticks)),
+                Activities = group.Select(a => a.ToObject<Activity>()).ToList()                
             })
-            .ToList();
+            .ToList();        
+        
+        string groupJson = JsonConvert.SerializeObject(groupedActivities, Formatting.Indented);
 
-        return Ok(summary);
+        return Ok(groupJson);
     }
-
-    
 }

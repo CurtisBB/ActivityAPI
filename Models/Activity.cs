@@ -14,8 +14,13 @@ public class Activity
     public DateTime DateTimeFinished { get; set; }
     public TimeSpan ElapsedTime { get; set; }
     
-    [JsonIgnore]
     public List<Attachment>? Attachments { get; set; }
+
+    public bool ShouldSerializeAttachments()
+    {
+        return Type == "Email";
+    }
+
 }
 
 public class Attachment 

@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\ActivityAPI\\ActivityAPI.csproj": {}
+    "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\ActivityAPI\\ActivityAPI.csproj": {
+    "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\ActivityAPI\\ActivityAPI.csproj",
+        "projectUniqueName": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj",
         "projectName": "ActivityAPI",
-        "projectPath": "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\ActivityAPI\\ActivityAPI.csproj",
-        "packagesPath": "C:\\Users\\Curtis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\ActivityAPI\\obj\\",
+        "projectPath": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj",
+        "packagesPath": "C:\\Users\\curti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Curtis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\curti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
