@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -8,8 +7,8 @@ using Newtonsoft.Json.Linq;
 public class ActivitiesController : ControllerBase
 {
     // Path to the directory 
-    public string directoryPath = "C:\\Users\\curti\\ActivitiesData";
-    //public string directoryPath = "C:\\Users\\Curtis\\.Projects\\ActivityAPI\\Data";
+    public string directoryPath = @"C:\Users\curti\ActivitiesData";
+    //public string directoryPath = @"C:\Users\Curtis\.Projects\ActivityAPI\Data";
 
     private JArray LoadActivitiesFromFiles()
     {   
