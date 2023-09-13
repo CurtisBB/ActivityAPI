@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj": {}
+    "C:\\Users\\curti\\Documents\\2023.Projects\\C#\\Activity\\BackEnd\\ActivityAPI\\ActivityAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj": {
+    "C:\\Users\\curti\\Documents\\2023.Projects\\C#\\Activity\\BackEnd\\ActivityAPI\\ActivityAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj",
+        "projectUniqueName": "C:\\Users\\curti\\Documents\\2023.Projects\\C#\\Activity\\BackEnd\\ActivityAPI\\ActivityAPI.csproj",
         "projectName": "ActivityAPI",
-        "projectPath": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\ActivityAPI.csproj",
+        "projectPath": "C:\\Users\\curti\\Documents\\2023.Projects\\C#\\Activity\\BackEnd\\ActivityAPI\\ActivityAPI.csproj",
         "packagesPath": "C:\\Users\\curti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\curti\\OneDrive - HomeBuns\\Documents\\2023.Projects\\C#\\Activity\\ActivityAPI\\obj\\",
+        "outputPath": "C:\\Users\\curti\\Documents\\2023.Projects\\C#\\Activity\\BackEnd\\ActivityAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\curti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[7.0.10, )"

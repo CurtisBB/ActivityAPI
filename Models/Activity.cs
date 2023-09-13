@@ -1,24 +1,24 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 
 public class Activity
 {
-    public int Id { get; set; }
-    public int FirmId { get; set; }
+    public Guid Id { get; set; }
+    public Guid FirmId { get; set; }
     public string Name { get; set; }
 
-    [Required]
-    [AllowedActivityTypes]
-    public string Type { get; set; }
+    public ActivityType Type { get; set; }
     public DateTime DateTimeStarted { get; set; }
     public DateTime DateTimeFinished { get; set; }
-    public TimeSpan ElapsedTime { get; set; }
+    public int ElapsedTime { get; set; }
     
     public List<Attachment>? Attachments { get; set; }
 
     public bool ShouldSerializeAttachments()
-    {
-        return Type == "Email";
+    {   
+        return Type == ActivityType.Email;
     }
 
 }
